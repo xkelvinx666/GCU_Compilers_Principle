@@ -15,15 +15,12 @@ class LexicalClass {
             if (isNum(currentChar)) {  //判断是否为数字
                 handleHeadNumber(errorList, lexicalCodeList, expression, line,
                                  &index);
-            } else if (isPoint(currentChar)) {  //判断是否为.
-                handleHeadPoint(errorList, expression, line, &index);
             } else if (isSymbol(currentChar)) {  //判断是否为符号
                 lexicalCodeList->addLexicalCode(
                     charToStr(expression.at(index)),
                     getTypeCode(expression.at(index)));
-            } else {  //非法字符，报错
-                errorList->addError(expression, charToStr(currentChar), line,
-                                    index);
+            } else {  //非法字符，闭包处理，报错非法字符，报错
+                handleHeadIllegal(errorList, expression, line, &index);
             }
         }
     }
