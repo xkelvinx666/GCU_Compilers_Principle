@@ -8,7 +8,7 @@ using namespace std;
 
 class LexicalClass {
    public:
-    bool analysis(ErrorList errorList, LexicalCodeList lexicalCodeList,
+    void analysis(ErrorList errorList, LexicalCodeList lexicalCodeList,
                   string expression, int line) {
         for (int index = 0; index < expression.length(); index++) {
             char currentChar = expression.at(index);
@@ -24,9 +24,4 @@ class LexicalClass {
             }
         }
     }
-    bool getResult(){
-
-    };
-
-   private:
 };

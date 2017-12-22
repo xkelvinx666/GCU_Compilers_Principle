@@ -5,3 +5,7 @@ test/
 .DS_Store
 .vscode
 *.out
+~$*
+cmake*
+.idea
+*.xml

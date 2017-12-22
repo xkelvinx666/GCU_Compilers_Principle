@@ -7,8 +7,8 @@ using namespace std;
 
 class ErrorListClass {
    public:
-    bool add(Error e) { this->vec.push_back(e); }
-    bool addError(string expression, string illegalStr, int line, int index) {
+    void add(Error e) { this->vec.push_back(e); }
+    void addError(string expression, string illegalStr, int line, int index) {
         Error e = new ErrorClass();
         if (index == 0) {
             e->setPreStr("开头");
@@ -20,7 +20,7 @@ class ErrorListClass {
         e->setIllegalStr(illegalStr);
         this->add(e);
     }
-    bool showError() {
+    void showError() {
         int index = 0;
         vector<Error>::iterator begin = this->vec.begin();
         vector<Error>::iterator end = this->vec.end();

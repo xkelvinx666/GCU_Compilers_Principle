@@ -7,8 +7,8 @@ using namespace std;
 
 class LexicalCodeListClass {
    public:
-    bool add(LexicalCode l) { this->vec.push_back(l); }
-    bool addLexicalCode(string original, int typeCode) {
+    void add(LexicalCode l) { this->vec.push_back(l); }
+    void addLexicalCode(string original, int typeCode) {
         LexicalCode lc = new LexicalCodeClass();
         lc->setOriginal(original);
         lc->setTypeCode(typeCode);
@@ -16,7 +16,7 @@ class LexicalCodeListClass {
         lc->setOutPut(getValue(original, typeCode));
         this->add(lc);
     }
-    bool show() {
+    void show() {
         int index = 0;
         vector<LexicalCode>::iterator begin = this->vec.begin();
         vector<LexicalCode>::iterator end = this->vec.end();
